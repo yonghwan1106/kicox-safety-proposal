@@ -247,10 +247,15 @@ function TitleSection() {
                 고위험 중소기업 스마트 관제센터 의무 연계를 통한<br />
                 <span className="text-blue-600">「산업집적법 시행령」 개정 방안</span>
               </h3>
-              <p className="text-slate-600 text-lg">
-                정부가 구축한 700억원 규모의 통합관제센터와<br />
+              <p className="text-slate-600 text-lg mb-4">
+                정부가 구축한 통합관제센터와<br />
                 사고 위험이 가장 높은 중소기업을 연결하는 법령 개정
               </p>
+              <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4 mt-6 inline-block">
+                <p className="text-green-700 font-bold">
+                  💡 1차년도 시범사업 (45억원) → 검증 후 단계적 전국 확대
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -286,28 +291,35 @@ function StatusAndProblemsSection() {
               <p className="text-green-700">산업단지 안전사고의 구조적 취약성과 정부의 대응</p>
             </div>
 
-            {/* Incident Story */}
+            {/* Incident Story - Real Case: Hwaseong Aricell Fire */}
             <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-8 mb-8">
               <div className="flex items-start gap-4 mb-6">
                 <AlertTriangle className="w-8 h-8 text-red-600 flex-shrink-0 mt-1" />
                 <div>
                   <p className="text-sm text-red-600 font-semibold mb-2">실제 사고 사례</p>
                   <h4 className="text-xl font-bold text-red-900 mb-4">
-                    2025년 6월 14일 새벽 2시, 경남 창원 산업단지
+                    2024년 6월 24일 오전 10시 31분, 경기도 화성시 아리셀 리튬배터리 공장
                   </h4>
                 </div>
               </div>
               <div className="space-y-4 text-slate-700">
-                <p>24년 된 압력용기에서 증기가 누출되기 시작했습니다. <span className="font-bold text-red-600">하지만 아무도 몰랐습니다.</span></p>
-                <p>새벽 4시, 압력용기가 폭발했습니다.</p>
-                <p className="text-xl font-bold text-red-600">근로자 2명 사망, 7명 중상</p>
+                <p>정옥일반산업단지 내 리튬 1차전지 제조 중소기업에서 화재가 발생했습니다.</p>
+                <p className="font-bold text-red-600">
+                  리튬배터리 셀 35,000개가 순식간에 폭발적으로 연쇄 반응하며 공장 전체를 집어삼켰습니다.
+                </p>
+                <p className="text-2xl font-black text-red-900 bg-red-100 p-4 rounded-lg text-center">
+                  23명 사망, 8명 부상
+                </p>
+                <p className="text-slate-600 text-sm">
+                  * 한국 역사상 최악의 화학공장 사고 / 사망자: 한국인 5명, 중국인 17명, 라오스인 1명
+                </p>
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg mt-6">
                   <p className="text-slate-700">
-                    <span className="font-bold">만약</span> A사의 압력용기가 3km 떨어진{" "}
-                    <span className="text-blue-600 font-bold">'창원 스마트 통합관제센터'</span>와 연결되어 있었다면?
+                    <span className="font-bold">만약</span> 이 공장이 3km 떨어진{" "}
+                    <span className="text-blue-600 font-bold">'스마트 통합관제센터'</span>와 연결되어 있었다면?
                   </p>
                   <p className="text-green-700 font-medium mt-2">
-                    → AI가 이상 징후 포착 → 관제센터 긴급 연락 → 밸브 잠금 → <span className="font-bold">참사 예방</span>
+                    → 온도·가스 이상 징후 AI 감지 → 관제센터 긴급 알림 → 즉시 대피 및 초기 진화 → <span className="font-bold">23명의 생명 구조 가능</span>
                   </p>
                 </div>
               </div>
@@ -468,23 +480,42 @@ function SolutionSection() {
           <div className="bg-white rounded-2xl p-8 shadow-lg mb-12">
             <div className="flex items-center gap-3 mb-6">
               <Target className="w-8 h-8 text-blue-600" />
-              <h3 className="text-2xl font-bold text-slate-900">목표</h3>
+              <h3 className="text-2xl font-bold text-slate-900">단계별 목표</h3>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
-                <p className="text-sm text-green-600 font-semibold mb-2">정량 목표</p>
-                <p className="text-slate-900 font-bold">
-                  고위험 중소기업의 통합관제센터<br />
-                  안전 데이터 연계율 <span className="text-3xl text-green-600">100%</span> 달성
-                </p>
+
+            {/* Phase 1 - Pilot */}
+            <div className="mb-6 bg-green-50 border-2 border-green-200 rounded-xl p-6">
+              <p className="text-sm text-green-600 font-semibold mb-3">1단계: 시범사업 (2026)</p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-slate-900 font-bold mb-1">대상 규모</p>
+                  <p className="text-2xl text-green-600 font-black">100-150개</p>
+                  <p className="text-sm text-slate-600">2-3개 산단 고위험 기업</p>
+                </div>
+                <div>
+                  <p className="text-slate-900 font-bold mb-1">목표 연계율</p>
+                  <p className="text-2xl text-green-600 font-black">80%+</p>
+                  <p className="text-sm text-slate-600">시범지역 참여율</p>
+                </div>
               </div>
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200">
-                <p className="text-sm text-blue-600 font-semibold mb-2">정성 목표</p>
-                <p className="text-slate-900 font-bold">
-                  '사고 후 대응(Reactive)' →<br />
-                  <span className="text-blue-600">AI/데이터 기반 '사고 전 예방(Predictive)'</span> 체계 전환
-                </p>
-              </div>
+            </div>
+
+            {/* Phase 2-3 - Expansion */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200">
+              <p className="text-sm text-blue-600 font-semibold mb-3">2-3단계: 조건부 확대 (2027-2028)</p>
+              <p className="text-slate-900 font-bold mb-3">
+                성공 검증 시 → 전국 <span className="text-3xl text-blue-600">4,500개</span> 기업으로 확대
+              </p>
+              <p className="text-sm text-slate-600">
+                ✅ 조건: 시범지역 재해율 40%↓, 참여율 80%+, SME 만족도 65/100+
+              </p>
+            </div>
+
+            <div className="mt-6 bg-purple-50 border-l-4 border-purple-600 rounded-r-xl p-4">
+              <p className="text-sm text-purple-900 font-bold">정성 목표 (전 단계 공통)</p>
+              <p className="text-slate-700">
+                '사고 후 대응(Reactive)' → <span className="text-purple-600 font-bold">AI/데이터 기반 '사고 전 예방(Predictive)'</span> 체계 전환
+              </p>
             </div>
           </div>
 
@@ -536,7 +567,7 @@ function SolutionSection() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                      <span className="font-medium">의무 대상: 약 4,500개 (전체의 7.5%)</span>
+                      <span className="font-medium">1단계: 100-150개 시범 → 검증 후 4,500개 확대</span>
                     </li>
                   </ul>
                 </div>
@@ -549,8 +580,8 @@ function SolutionSection() {
             {[
               {
                 icon: <Shield className="w-7 h-7" />,
-                title: "선별적 집중",
-                desc: "전체가 아닌 고위험 7.5%만 의무화",
+                title: "시범부터 시작",
+                desc: "100-150개 기업으로 검증 후 확대",
                 color: "blue",
               },
               {
@@ -734,30 +765,42 @@ function ExpectedEffectsSection() {
             <span className="text-sm text-slate-600 ml-2">* 정량적 효과 포함</span>
           </div>
 
-          {/* ROI Highlight */}
+          {/* Pilot Program ROI Highlight */}
           <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-12 text-white mb-12 shadow-2xl">
             <div className="text-center">
-              <p className="text-green-100 text-lg mb-4">투자 대비 효과 (ROI)</p>
+              <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 inline-block mb-6">
+                <p className="text-white font-bold text-sm">💡 1차년도 시범사업 (2026)</p>
+              </div>
+              <p className="text-green-100 text-lg mb-4">시범사업 투자 대비 효과</p>
               <div className="flex items-center justify-center gap-12 flex-wrap">
                 <div>
-                  <p className="text-sm text-green-100 mb-2">3년 투자</p>
-                  <p className="text-5xl font-black">700억</p>
+                  <p className="text-sm text-green-100 mb-2">1년 시범 투자</p>
+                  <p className="text-5xl font-black">45억</p>
+                  <p className="text-sm text-green-100 mt-2">2-3개 산단, 100-150개 기업</p>
                 </div>
                 <ArrowRight className="w-12 h-12" />
                 <div>
-                  <p className="text-sm text-green-100 mb-2">연간 편익</p>
-                  <p className="text-5xl font-black">760억</p>
+                  <p className="text-sm text-green-100 mb-2">연간 기대 편익</p>
+                  <p className="text-5xl font-black">25억</p>
+                  <p className="text-sm text-green-100 mt-2">사고 감소 효과</p>
                 </div>
               </div>
               <div className="mt-8 grid md:grid-cols-2 gap-6">
                 <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
-                  <p className="text-green-100 mb-2">투자 회수 기간</p>
-                  <p className="text-4xl font-black">11개월</p>
+                  <p className="text-green-100 mb-2">시범 대상</p>
+                  <p className="text-4xl font-black">100-150개</p>
+                  <p className="text-sm text-green-100 mt-2">고위험 중소기업</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
-                  <p className="text-green-100 mb-2">ROI</p>
-                  <p className="text-4xl font-black">226%</p>
+                  <p className="text-green-100 mb-2">1차년 ROI</p>
+                  <p className="text-4xl font-black">55%</p>
+                  <p className="text-sm text-green-100 mt-2">검증 후 전국 확대</p>
                 </div>
+              </div>
+              <div className="mt-6 bg-blue-900/40 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                <p className="text-white font-medium">
+                  ✅ 성공 검증 시 → 2027-2028 단계적 전국 확대 (총 325-365억원)
+                </p>
               </div>
             </div>
           </div>
@@ -773,18 +816,18 @@ function ExpectedEffectsSection() {
               <ul className="space-y-6">
                 {[
                   {
-                    title: "재해율 90% 감소",
-                    desc: "연간 약 45명의 생명 구조",
+                    title: "시범지역 재해 50% 감소",
+                    desc: "100-150개 기업 연 3-5명 생명 구조",
                     icon: "1",
                   },
                   {
                     title: "보험료 20-30% 절감",
-                    desc: "중소기업 연간 300만원 절감",
+                    desc: "참여기업 연간 300만원 절감",
                     icon: "2",
                   },
                   {
                     title: "경제적 손실 감소",
-                    desc: "연간 약 450억원 절감 효과",
+                    desc: "시범지역 연간 약 25억원 절감",
                     icon: "3",
                   },
                 ].map((item, index) => (
@@ -911,19 +954,30 @@ function SafetyProjectSection() {
                 </div>
                 <div>
                   <p className="text-sm text-blue-600 font-semibold mb-2">사업 기간</p>
-                  <p className="text-slate-900 font-bold">2026~2028년 (3년)</p>
+                  <p className="text-slate-900 font-bold">
+                    1단계: 2026년 (시범)<br/>
+                    2-3단계: 2027-2028년 (확대)
+                  </p>
                 </div>
                 <div>
                   <p className="text-sm text-blue-600 font-semibold mb-2">사업 예산</p>
-                  <p className="text-slate-900 font-bold">연 120억원 (총 360억원)</p>
+                  <p className="text-slate-900 font-bold">
+                    1단계: 45억원<br/>
+                    <span className="text-sm text-slate-600">(조건부 확대 시 총 325-365억)</span>
+                  </p>
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t">
-                <p className="text-slate-700">
+                <p className="text-slate-700 mb-3">
                   <span className="font-bold text-slate-900">목적:</span> 개정된 시행령에 따라
                   데이터 연계 의무가 발생한 중소기업에게 IoT 안전 센서 및 통신장비 도입 비용과
                   기술 컨설팅 지원
                 </p>
+                <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-lg">
+                  <p className="text-green-800 font-medium">
+                    💡 <span className="font-bold">시범사업 우선</span>: 2-3개 산단에서 검증 후 전국 확대로 재정 리스크 최소화
+                  </p>
+                </div>
               </div>
             </div>
           </div>
