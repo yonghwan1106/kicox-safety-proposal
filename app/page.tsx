@@ -55,16 +55,34 @@ export default function Home() {
       <CTASection />
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-16">
-        <div className="container mx-auto px-4">
+      <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <p className="text-slate-400 text-lg mb-2">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="bg-gradient-to-br from-blue-600 to-indigo-600 p-3 rounded-xl shadow-lg">
+                <Building2 className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-2xl font-black tracking-tight">KICOX 2025</h3>
+                <p className="text-sm text-slate-400 font-medium">산단안전 제도개선 공모전</p>
+              </div>
+            </div>
+            <p className="text-slate-300 text-xl font-bold mb-3">
               2025년 KICOX 산단안전 제도개선 공모전 제안서
             </p>
-            <p className="text-slate-500">
+            <p className="text-slate-400 font-medium text-lg">
               고위험 중소기업 스마트 관제센터 의무 연계를 통한<br />
               「산업집적법 시행령」 개정 방안
             </p>
+            <div className="mt-8 pt-8 border-t border-slate-700">
+              <p className="text-slate-500 text-sm">© 2025 KICOX. All rights reserved.</p>
+            </div>
           </div>
         </div>
       </footer>
@@ -74,23 +92,25 @@ export default function Home() {
 
 function Navigation() {
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
-      <div className="container mx-auto px-4 py-4">
+    <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-xl shadow-lg z-50 border-b border-slate-200/50">
+      <div className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Building2 className="w-8 h-8 text-blue-600" />
+            <div className="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-xl shadow-lg">
+              <Building2 className="w-7 h-7 text-white" />
+            </div>
             <div>
-              <h1 className="text-xl font-bold text-slate-900">KICOX 2025</h1>
-              <p className="text-xs text-slate-600">산단안전 제도개선 공모전</p>
+              <h1 className="text-xl font-black text-slate-900 tracking-tight">KICOX 2025</h1>
+              <p className="text-xs text-slate-500 font-medium">산단안전 제도개선 공모전</p>
             </div>
           </div>
-          <div className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#title" className="text-slate-600 hover:text-blue-600 transition-colors">제목</a>
-            <a href="#status" className="text-slate-600 hover:text-blue-600 transition-colors">현황</a>
-            <a href="#solution" className="text-slate-600 hover:text-blue-600 transition-colors">개선방안</a>
-            <a href="#legal" className="text-slate-600 hover:text-blue-600 transition-colors">법령개정</a>
-            <a href="#effects" className="text-slate-600 hover:text-blue-600 transition-colors">기대효과</a>
-            <a href="#project" className="text-slate-600 hover:text-blue-600 transition-colors">안전사업</a>
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#title" className="text-slate-600 hover:text-blue-600 transition-all hover:scale-110 duration-200">제목</a>
+            <a href="#status" className="text-slate-600 hover:text-blue-600 transition-all hover:scale-110 duration-200">현황</a>
+            <a href="#solution" className="text-slate-600 hover:text-blue-600 transition-all hover:scale-110 duration-200">개선방안</a>
+            <a href="#legal" className="text-slate-600 hover:text-blue-600 transition-all hover:scale-110 duration-200">법령개정</a>
+            <a href="#effects" className="text-slate-600 hover:text-blue-600 transition-all hover:scale-110 duration-200">기대효과</a>
+            <a href="#project" className="text-slate-600 hover:text-blue-600 transition-all hover:scale-110 duration-200">안전사업</a>
           </div>
         </div>
       </div>
@@ -142,10 +162,10 @@ function HeroSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full mb-8"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl border border-white/30 text-white px-8 py-4 rounded-full mb-8 shadow-2xl hover:bg-white/20 transition-all duration-300"
           >
-            <Zap className="w-5 h-5 text-yellow-300" />
-            <span className="font-medium">2025년 KICOX 산단안전 제도개선 공모전</span>
+            <Zap className="w-5 h-5 text-yellow-300 animate-pulse" />
+            <span className="font-semibold tracking-wide">2025년 KICOX 산단안전 제도개선 공모전</span>
           </motion.div>
 
           {/* Main Title */}
@@ -186,13 +206,17 @@ function HeroSection() {
               { value: "1.7배", label: "중소기업 사고율" },
               { value: "0.9%", label: "현재 수혜율" },
             ].map((stat, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl p-6 shadow-2xl hover:bg-white/20 transition-all duration-300"
               >
-                <div className="text-4xl font-black text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-blue-100">{stat.label}</div>
-              </div>
+                <div className="text-5xl font-black text-white mb-2 bg-gradient-to-br from-white to-blue-100 bg-clip-text text-transparent">{stat.value}</div>
+                <div className="text-sm text-blue-100 font-medium">{stat.label}</div>
+              </motion.div>
             ))}
           </motion.div>
 
@@ -238,21 +262,21 @@ function TitleSection() {
           </div>
 
           {/* Title Card */}
-          <div className="bg-white rounded-3xl shadow-xl border-2 border-blue-100 p-12">
+          <div className="bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 rounded-3xl shadow-2xl border-2 border-blue-200/50 p-12 backdrop-blur-sm hover:shadow-3xl transition-all duration-500">
             <div className="text-center">
-              <div className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-full text-lg font-bold mb-8">
+              <div className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-black mb-8 shadow-lg hover:scale-105 transition-transform duration-300">
                 산단 안전의 '속 빈 강정' 채운다
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 leading-tight">
+              <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
                 고위험 중소기업 스마트 관제센터 의무 연계를 통한<br />
-                <span className="text-blue-600">「산업집적법 시행령」 개정 방안</span>
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">「산업집적법 시행령」 개정 방안</span>
               </h3>
-              <p className="text-slate-600 text-lg mb-4">
+              <p className="text-slate-600 text-lg mb-4 font-medium leading-relaxed">
                 정부가 구축한 통합관제센터와<br />
                 사고 위험이 가장 높은 중소기업을 연결하는 법령 개정
               </p>
-              <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4 mt-6 inline-block">
-                <p className="text-green-700 font-bold">
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300/50 rounded-2xl p-5 mt-6 inline-block shadow-lg hover:scale-105 transition-transform duration-300">
+                <p className="text-green-700 font-black text-lg">
                   💡 1차년도 시범사업 (45억원) → 검증 후 단계적 전국 확대
                 </p>
               </div>
@@ -355,14 +379,15 @@ function StatusAndProblemsSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                  whileHover={{ scale: 1.05, y: -10 }}
+                  className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100"
                 >
-                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${stat.color} text-white mb-4`}>
+                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${stat.color} text-white mb-4 shadow-lg`}>
                     {stat.icon}
                   </div>
-                  <div className="text-5xl font-black text-slate-900 mb-2">{stat.value}</div>
-                  <div className="text-slate-700 font-semibold">{stat.label}</div>
-                  <div className="text-slate-500 text-sm">{stat.sublabel}</div>
+                  <div className={`text-5xl font-black mb-2 bg-gradient-to-br ${stat.color} bg-clip-text text-transparent`}>{stat.value}</div>
+                  <div className="text-slate-800 font-bold text-lg">{stat.label}</div>
+                  <div className="text-slate-500 text-sm font-medium">{stat.sublabel}</div>
                 </motion.div>
               ))}
             </div>
@@ -582,19 +607,25 @@ function SolutionSection() {
                 icon: <Shield className="w-7 h-7" />,
                 title: "시범부터 시작",
                 desc: "100-150개 기업으로 검증 후 확대",
-                color: "blue",
+                gradient: "from-blue-500 to-blue-600",
+                bg: "bg-blue-50",
+                border: "border-blue-500",
               },
               {
                 icon: <Network className="w-7 h-7" />,
                 title: "기존 인프라 활용",
                 desc: "신규 투자 최소화, 관제센터 활용",
-                color: "indigo",
+                gradient: "from-indigo-500 to-purple-600",
+                bg: "bg-indigo-50",
+                border: "border-indigo-500",
               },
               {
                 icon: <TrendingUp className="w-7 h-7" />,
                 title: "80% 재정 지원",
                 desc: "중소기업 부담 최소화 (자부담 20%)",
-                color: "green",
+                gradient: "from-green-500 to-emerald-600",
+                bg: "bg-green-50",
+                border: "border-green-500",
               },
             ].map((feature, index) => (
               <motion.div
@@ -602,13 +633,14 @@ function SolutionSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.2 + index * 0.1 }}
-                className={`bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-${feature.color}-500`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                className={`bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 ${feature.border}`}
               >
-                <div className={`inline-flex p-3 bg-${feature.color}-100 rounded-lg text-${feature.color}-600 mb-4`}>
-                  {feature.icon}
+                <div className={`inline-flex p-3 ${feature.bg} rounded-xl bg-gradient-to-br ${feature.gradient} mb-4 shadow-md`}>
+                  <div className="text-white">{feature.icon}</div>
                 </div>
-                <h4 className="font-bold text-slate-900 mb-2 text-lg">{feature.title}</h4>
-                <p className="text-sm text-slate-600">{feature.desc}</p>
+                <h4 className="font-black text-slate-900 mb-2 text-lg">{feature.title}</h4>
+                <p className="text-sm text-slate-600 font-medium">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -766,24 +798,36 @@ function ExpectedEffectsSection() {
           </div>
 
           {/* Pilot Program ROI Highlight */}
-          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-12 text-white mb-12 shadow-2xl">
-            <div className="text-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 inline-block mb-6">
-                <p className="text-white font-bold text-sm">💡 1차년도 시범사업 (2026)</p>
+          <div className="bg-gradient-to-br from-green-500 via-emerald-600 to-teal-600 rounded-3xl p-12 text-white mb-12 shadow-2xl relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="text-center relative z-10">
+              <div className="bg-white/20 backdrop-blur-xl rounded-full px-8 py-3 inline-block mb-6 border border-white/30 shadow-lg">
+                <p className="text-white font-black text-base">💡 1차년도 시범사업 (2026)</p>
               </div>
-              <p className="text-green-100 text-lg mb-4">시범사업 투자 대비 효과</p>
+              <p className="text-green-100 text-xl mb-6 font-bold">시범사업 투자 대비 효과</p>
               <div className="flex items-center justify-center gap-12 flex-wrap">
-                <div>
-                  <p className="text-sm text-green-100 mb-2">1년 시범 투자</p>
-                  <p className="text-5xl font-black">45억</p>
-                  <p className="text-sm text-green-100 mt-2">2-3개 산단, 100-150개 기업</p>
-                </div>
-                <ArrowRight className="w-12 h-12" />
-                <div>
-                  <p className="text-sm text-green-100 mb-2">연간 기대 편익</p>
-                  <p className="text-5xl font-black">25억</p>
-                  <p className="text-sm text-green-100 mt-2">사고 감소 효과</p>
-                </div>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/30 shadow-xl"
+                >
+                  <p className="text-sm text-green-100 mb-2 font-medium">1년 시범 투자</p>
+                  <p className="text-6xl font-black mb-2 bg-gradient-to-br from-white to-green-100 bg-clip-text text-transparent">45억</p>
+                  <p className="text-sm text-green-100 mt-2 font-medium">2-3개 산단, 100-150개 기업</p>
+                </motion.div>
+                <ArrowRight className="w-16 h-16 animate-pulse" />
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/30 shadow-xl"
+                >
+                  <p className="text-sm text-green-100 mb-2 font-medium">연간 기대 편익</p>
+                  <p className="text-6xl font-black mb-2 bg-gradient-to-br from-yellow-200 to-white bg-clip-text text-transparent">25억</p>
+                  <p className="text-sm text-green-100 mt-2 font-medium">사고 감소 효과</p>
+                </motion.div>
               </div>
               <div className="mt-8 grid md:grid-cols-2 gap-6">
                 <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
@@ -889,10 +933,10 @@ function ExpectedEffectsSection() {
             </h3>
             <div className="space-y-4">
               {[
-                { time: "새벽 2시", event: "압력용기 이상 징후 발생", color: "red" },
-                { time: "0.3초 후", event: "AI가 이상 징후 감지", color: "yellow" },
-                { time: "1분 후", event: "관제센터 긴급 연락 → 현장 대응", color: "blue" },
-                { time: "2분 후", event: "위기 해소 완료", color: "green" },
+                { time: "새벽 2시", event: "압력용기 이상 징후 발생", bgColor: "bg-red-600", borderColor: "border-red-400" },
+                { time: "0.3초 후", event: "AI가 이상 징후 감지", bgColor: "bg-yellow-600", borderColor: "border-yellow-400" },
+                { time: "1분 후", event: "관제센터 긴급 연락 → 현장 대응", bgColor: "bg-blue-600", borderColor: "border-blue-400" },
+                { time: "2분 후", event: "위기 해소 완료", bgColor: "bg-green-600", borderColor: "border-green-400" },
               ].map((step, index) => (
                 <motion.div
                   key={index}
@@ -901,10 +945,10 @@ function ExpectedEffectsSection() {
                   transition={{ delay: 0.2 + index * 0.1 }}
                   className="flex items-center gap-4"
                 >
-                  <div className={`bg-${step.color}-600 text-white font-bold py-3 px-6 rounded-lg min-w-[120px] text-center shadow-md`}>
+                  <div className={`${step.bgColor} text-white font-bold py-3 px-6 rounded-lg min-w-[120px] text-center shadow-md`}>
                     {step.time}
                   </div>
-                  <div className="flex-1 bg-slate-50 rounded-lg p-4 border-l-4 border-${step.color}-400">
+                  <div className={`flex-1 bg-slate-50 rounded-lg p-4 border-l-4 ${step.borderColor}`}>
                     <p className="text-slate-700 font-medium">{step.event}</p>
                   </div>
                 </motion.div>
@@ -1215,18 +1259,24 @@ function CTASection() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <motion.a
               href="/docs/공모전 제안서_보강버전.md"
-              className="inline-flex items-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-50 transition-all shadow-2xl hover:scale-105"
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 bg-white text-blue-600 px-12 py-6 rounded-full font-black text-lg shadow-2xl hover:shadow-3xl transition-all border-2 border-white"
             >
               <FileText className="w-6 h-6" />
               전체 제안서 보기
-            </a>
-            <button className="inline-flex items-center gap-3 bg-blue-500/30 backdrop-blur-md text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-400/40 transition-all border-2 border-white/30 hover:scale-105">
+            </motion.a>
+            <motion.button
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl text-white px-12 py-6 rounded-full font-black text-lg transition-all border-2 border-white/30 shadow-xl hover:bg-white/20"
+            >
               <Download className="w-6 h-6" />
               PDF 다운로드
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </div>
