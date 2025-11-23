@@ -1241,7 +1241,7 @@ function CTASection() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
             법령 개정이라는<br />
             마지막 퍼즐 한 조각이<br />
             <span className="text-yellow-300">산단 안전의 패러다임</span>을 바꿉니다
